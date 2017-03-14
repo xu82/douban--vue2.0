@@ -2,7 +2,6 @@ import VueRouter from 'vue-router'
 import Vue from 'vue'
 import axios from 'axios'
 import App from './App.vue'
-import es6Text from './assets/es6Text'
 
 import movies from './views/movie/movies.vue'
 import movieDetail from './views/movie/movieDetail.vue'

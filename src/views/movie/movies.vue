@@ -59,7 +59,6 @@
 </template>
 
 <script type="es6">
-    import movieListItem from './movieListItem.vue'
     import axios from 'axios'
     import loading from '../../components/loading.vue'
     export default{
@@ -79,7 +78,6 @@
             }
         },
         components:{
-            movieListItem,
             loading
         },
         mounted(){
