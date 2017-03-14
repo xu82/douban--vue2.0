@@ -1,0 +1,139 @@
+@charset "utf-8";
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin:0;
+    padding:0;
+}
+body{-webkit-text-size-adjust:none; /*如果文字＜12px无效*/
+    -webkit-touch-callout:none;/*禁止用户在新窗口弹出页面*/
+    -webkit-user-select:none;
+}
+body, button, input, select, textarea /* for ie */ {
+    font:12px/1.5 Tahoma, Arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size:100%;
+}
+address, cite, dfn, em, b,caption,code,strong,th,var,em,i{
+    font-style:normal;
+    font-weight:normal;
+} /* 将斜体扶正 */
+code, kbd, pre, samp {
+    font-family:courier new, courier, monospace;
+} /* 统一等宽字体 */
+small {
+    font-size:12px;
+} /* 小于 12px 的中文很难阅读，让 small 正常化 */
+/** 重置列表元素 **/
+ul, ol ,li,dl{
+    list-style:none;
+}
+/** 重置文本格式元素 **/
+a {
+    color:#bf2c2a;
+    text-decoration:none;
+}
+a:hover {
+
+    text-decoration:none;
+}
+sup {
+    vertical-align:text-top;
+} /* 重置，减少对行高的影响 */
+sub {
+    vertical-align:text-bottom;
+}
+a:hover,a:active, input, :focus { outline:none;}
+/** 重置表单元素 **/
+legend {
+    color:#000;
+} /* for ie6 */
+fieldset, img {
+    border:0;-ms-interpolation-mode:bicubic;
+} /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea {
+    font-size:100%;
+    -webkit-appearance:none;
+    border-radius: 0;
+} /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+/** 重置表格元素 **/
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+    word-break:break-all;
+}
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer, header,menu, nav, section, summary, time, mark, audio, video {
+    display:block;
+    margin:0;
+    padding:0;
+}
+/*兼容android样式*/
+select{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* 隐藏 */
+.hidden {display:none;}
+.invisible {visibility:hidden;}
+/* 清除浮动 */
+.clear:after {
+    content:'\20';
+    display:block;
+    height:0;
+    clear:both;
+}
+.clear {	*zoom:1;}
+/*行块*/
+.inlineBlock{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
+/*重置盒子模型模式*/
+*{ -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; font-family:'Helvetica','Arial','sans-serif','\5FAE\8F6F\96C5\9ED1';}
+div, ul, li, dl, dt, dd, p, span, em, i, a,
+header, section, footer{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);/* 清除手机中点击出现的高亮边框 */
+    /*-webkit-text-size-adjust:none;*//* 清除默认字体大小 */
+}
+html,body{height:100%;}
+@media screen and (max-width:320px) {
+    html {
+        font-size: 100px
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:374px) {
+    html {
+        font-size: 100px
+    }
+}
+
+@media screen and (min-width:375px) and (max-width:429px) {
+    html {
+        font-size: 110px;
+    }
+}
+
+@media screen and (min-width:430px) and (max-width:484px) {
+    html {
+        font-size: 120px
+    }
+}
+@media screen and (min-width:485px) and (max-width:539px) {
+    html {
+        font-size: 130px
+    }
+}
+@media screen and (min-width:540px){
+    html {
+        font-size: 140px
+    }
+}
