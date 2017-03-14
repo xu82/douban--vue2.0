@@ -100,7 +100,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style  scoped>
   .rl_head{
     height:0.4rem;
     line-height:0.4rem;
@@ -109,12 +109,13 @@
     border-bottom:1px solid #ccc;
     font-size:0.12rem;
   }
-  .rl_list{
+  .rl_list {
     position: relative;
-    padding:0.16rem 0 0.16rem 0.95rem;
+    padding: 0.16rem 0 0.16rem 0.95rem;
     height: 1.3rem;
     border-bottom: 1px solid #ccc;
-  img{
+  }
+  .rl_list img{
     position: absolute;
     max-width: 0.65rem;
     top: 0.16rem;
@@ -131,6 +132,7 @@
     height: 0.2rem;
     line-height: 0.2rem;
     color: #666;
+  }
   .stars{
     display: inline-block;
     width: 55px;
@@ -139,10 +141,6 @@
     background-size: cover;
     background-position-x: 0;
   }
-  .score{
-
-  }
-  }
   .daoyan,.zhuyan{
     color: #666;
     height:0.2rem;
@@ -150,7 +148,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow:hidden;
-  }
   }
 
 </style>

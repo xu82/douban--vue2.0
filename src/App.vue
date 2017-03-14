@@ -31,7 +31,7 @@
   }
 </script>
 
-<style lang="scss">
+<style>
   #app{
     padding-top:0.9rem;
   }

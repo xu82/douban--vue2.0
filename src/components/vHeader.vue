@@ -21,13 +21,7 @@
                     {title:'选电影',path:'/movies',isActive:true},
                     {title:'电视剧',path:'/television'},
                     {title:'排行榜',path:'/chart'},
-                    {title:'影评',path:'/best'},
-                    {title:'影评2',path:'/best'},
-                    {title:'影评3',path:'/best'},
-                    {title:'影评4',path:'/best'},
-                    {title:'影评5',path:'/best'},
-                    {title:'影评5',path:'/best'},
-                    {title:'影评5',path:'/best'}
+                    {title:'影评',path:'/best'}
                 ]
             }
         },
@@ -46,7 +40,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
     #header{
         position: fixed;
         top: -1px;
@@ -87,12 +81,12 @@
         height:0.4rem;
         font-size:0;
         padding:0 0.05rem;
-        .active{
-            border-bottom: 2px solid #27a;
-        }
-        .unActive{
-            border-bottom:none;
-        }
+    }
+    .active{
+      border-bottom: 2px solid #27a;
+    }
+    .unActive{
+      border-bottom:none;
     }
     .nav-list{
         display:inline-block;
@@ -101,9 +95,9 @@
         text-align: center;
         height:0.4rem;
         line-height: 0.4rem;
-        a{
-            color: #27a;
-            cursor: pointer;
-        }
+    }
+    .nav-list a{
+      color: #27a;
+      cursor: pointer;
     }
 </style>

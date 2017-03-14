@@ -111,16 +111,16 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
   #movies{
     background: #f0f0f0;
-    .title,.nowPlaying,.upComing{
-      background: #fff;
-    }
-    .upComing{
-      margin-top:0.2rem;
+  }
+  .title,.nowPlaying,.upComing{
+    background: #fff;
+  }
+  .upComing{
+    margin-top:0.2rem;
 
-    }
   }
 
     /* 头部部分 */

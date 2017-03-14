@@ -91,7 +91,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   .rl_head{
     height:0.4rem;
     line-height:0.4rem;
@@ -100,11 +100,12 @@
     border-bottom:1px solid #ccc;
     font-size:0.12rem;
   }
-  .rl_list{
+  .rl_list {
     position: relative;
-    padding:0.16rem 0 0.16rem 0.95rem;
+    padding: 0.16rem 0 0.16rem 0.95rem;
     height: 1.3rem;
     border-bottom: 1px solid #ccc;
+  }
     img{
       position: absolute;
       max-width: 0.65rem;
@@ -125,18 +126,15 @@
       height: 0.2rem;
       line-height: 0.2rem;
       color: #666;
-      .stars{
-        display: inline-block;
-        width: 55px;
-        height: 11px;
-        background: url('https://img3.doubanio.com/f/shire/0147ca9efddcac80050854590d26bee587b008df/pics/rating_icons/ic_rating_s@2x.png') no-repeat;
-        background-size: cover;
-        background-position-x: 0;
-      }
-      .score{
-
-      }
     }
+  .stars{
+    display: inline-block;
+    width: 55px;
+    height: 11px;
+    background: url('https://img3.doubanio.com/f/shire/0147ca9efddcac80050854590d26bee587b008df/pics/rating_icons/ic_rating_s@2x.png') no-repeat;
+    background-size: cover;
+    background-position-x: 0;
+  }
     .daoyan,.zhuyan{
       color: #666;
       height:0.2rem;
@@ -145,6 +143,5 @@
       text-overflow: ellipsis;
       overflow:hidden;
     }
-  }
 
 </style>
