@@ -3,6 +3,8 @@ import Vue from 'vue'
 import axios from 'axios'
 import App from './App.vue'
 
+import store from './store/store'
+
 import movies from './views/movie/movies.vue'
 import movieDetail from './views/movie/movieDetail.vue'
 import resultList from './components/resultList.vue'
@@ -26,5 +28,6 @@ const router=new VueRouter({
 new Vue({
   router,
   axios,
+  store,
   render: h => h(App)
 }).$mount('#app');

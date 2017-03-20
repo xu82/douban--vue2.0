@@ -54,7 +54,7 @@
 
 <script type="es6">
   import {getColor} from '../../assets/rgbaster';
-  import axios from 'axios'
+  import {fetch} from '../../store/api'
   import loading from '../../components/loading.vue'
   export default{
     components:{
@@ -76,10 +76,10 @@
     methods:{
       getDetail(){
         const _this=this;
-        axios.get('/v2/movie/subject/'+this.$route.params.id)
-          .then(response =>{
-            console.log(response);
-            this.details=response.data;
+        fetch('/v2/movie/subject/'+this.$route.params.id)
+          .then(responseData =>{
+            console.log(responseData);
+            this.details=responseData.data;
             this.imgLink=this.details.images.large;
             getColor().colors(this.imgLink,{
               success: function(payload) {

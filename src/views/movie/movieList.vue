@@ -26,7 +26,7 @@
 </template>
 
 <script type="es6">
-  import axios from 'axios'
+  import {fetch} from '../../store/api'
   import infiniteScroll from 'vue-infinite-scroll'
   import loading from '../../components/loading.vue'
   export default{
@@ -43,11 +43,6 @@
           title:'',
           total:''
         },
-        /*subjects:[
-          {},
-          {},
-          {}
-        ],*/
         busy:false
       }
     },
@@ -72,16 +67,16 @@
         this.busy=true;//停用下拉刷新功能
         let start=this.movieList.subjects.length;
         let url=`/v2/movie/${this.type}`;
-        axios.get(url,
-          {params:{
-            start:start,
-            count:10,
-            city:'杭州'
-          }})
-          .then(response => {
-            this.movieList.title=response.data.title;
-            this.movieList.total=response.data.total;
-            this.movieList.subjects=this.movieList.subjects.concat(response.data.subjects);
+        let oSend={
+          start:start,
+          count:10,
+          city:'杭州'
+        };
+        fetch(url,oSend)
+          .then(responseData => {
+            this.movieList.title=responseData.data.title;
+            this.movieList.total=responseData.data.total;
+            this.movieList.subjects=this.movieList.subjects.concat(responseData.data.subjects);
             for(let i=0;i<this.movieList.subjects.length;i++){
               let oData=this.movieList.subjects[i];
               this.$set(oData,'bgPY',{backgroundPositionY:(Number(oData.rating.stars)-50)*2.2+'px'});

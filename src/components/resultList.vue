@@ -26,7 +26,7 @@
 </template>
 
 <script type="es6">
-  import axios from 'axios'
+  import {fetch} from '../store/api'
   import infiniteScroll from 'vue-infinite-scroll'
   import loading from './loading.vue'
   export default{
@@ -65,7 +65,7 @@
       loadMore(){
         this.busy=true;//停用下拉刷新功能
         let start=this.resultList.subjects.length;
-        axios.get(`/v2/movie/search?q=${this.searchText}`,{
+        fetch(`/v2/movie/search?q=${this.searchText}`,{
           params:{start:start}
         })
           .then(response => {

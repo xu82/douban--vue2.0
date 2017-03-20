@@ -20,7 +20,7 @@
                         <img class="imgs" :src="item.images.medium">
                         <p class="item-name">{{item.title}}</p>
                         <p class="item-rating">
-                          <span class="rating-star" v-bind:style="item.bgPY" v-if="item.rating.average!=0"></span>
+                          <span class="rating-star" :style="item.bgPY" v-if="item.rating.average!=0"></span>
                           <span class="rating-score">{{item.rating.average!=0==0?'暂无评分':item.rating.average}}</span>
                         </p>
                       </div>
@@ -59,7 +59,7 @@
 </template>
 
 <script type="es6">
-    import axios from 'axios'
+    import {fetch} from '../../store/api'
     import loading from '../../components/loading.vue'
     export default{
         data(){
@@ -85,23 +85,33 @@
           this.getComingMovies();
         },
         methods:{
-            getHottingMovies(){
-              axios.get(this.inTheaters.apiUrl,{params:{city:'杭州',start:0,count:6}})
-                .then(response=>{
-                  console.log(response);
-                  this.inTheaters.subjects=this.inTheaters.subjects.concat(response.data.subjects);
-                  for(let i=0;i<this.inTheaters.subjects.length;i++){
-                    let oData=this.inTheaters.subjects[i];
-                    this.$set(oData,'bgPY',{'backgroundPositionY':(Number(oData.rating.stars)-50)*2.2+'px'});
-                    this.isLoading=false;
-                  }
-                })
-            },
+          getHottingMovies(){
+            let url=this.inTheaters.apiUrl;
+            let oSend={
+              city:'杭州',
+              start:0,
+              count:6
+            };
+            fetch(url,oSend).then(responseData=>{
+              this.inTheaters.subjects=this.inTheaters.subjects.concat(responseData.data.subjects);
+              for(let i=0;i<this.inTheaters.subjects.length;i++){
+                let oData=this.inTheaters.subjects[i];
+                this.$set(oData,'bgPY',{'backgroundPositionY':(Number(oData.rating.stars)-50)*2.2+'px'});
+                this.isLoading=false;
+              }
+            })
+          },
             getComingMovies(){
-              axios.get(this.comingSoon.apiUrl,{params:{city:'杭州',start:0,count:6}})
-                .then(response=>{
-                  console.log(response);
-                  this.comingSoon.subjects=this.comingSoon.subjects.concat(response.data.subjects);
+              let url=this.comingSoon.apiUrl;
+              let oSend={
+                city:'杭州',
+                start:0,
+                count:6
+              }
+              fetch(url,oSend)
+                .then(responseData=>{
+                  // console.log(response);
+                  this.comingSoon.subjects=this.comingSoon.subjects.concat(responseData.data.subjects);
                   this.isLoading=false;
                 })
             }
